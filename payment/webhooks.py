@@ -38,10 +38,14 @@ def stripe_webhook(request):
                 order = Order.objects.get(id=session.client_reference_id)
                 # Log the order
                 logger.info(f"Order found: {order.id}, updating paid status.")
-                order.paid = True
-                order.save()
+
             except Order.DoesNotExist:
                 logger.error(f"Order with id {session.client_reference_id} does not exist.")
                 return HttpResponse(status=404)
+            
+            # store Stripe payment ID
+            order.stripe_id = session.payment_intent
+            order.paid = True
+            order.save()
 
     return HttpResponse(status=200)

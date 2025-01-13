@@ -13,6 +13,7 @@ import os
 from dotenv import load_dotenv
 from decouple import config
 from pathlib import Path
+#os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 
 #initialize the environment variables
 #env = environ.Env()
@@ -39,7 +40,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    #'jazzmin',
     'daphne',
 
     'django.contrib.admin',
@@ -175,6 +176,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'

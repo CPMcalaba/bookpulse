@@ -23,7 +23,6 @@ logger = logging.getLogger(__name__)
 
 def IndexView(request):
     cart = Cart(request)
-    #print(cart)
     return render(request,'shop/index.html', {'cart': cart})
 
 #def category_list(request):
@@ -194,7 +193,7 @@ class ProductDetailView(DetailView):
 def register_interaction(request, isbn):
     product = get_object_or_404(Product, isbn=isbn)
     user = request.user
-    print(user)
+    #print(user)
 
     interaction, created = Interaction.objects.get_or_create(user=user, product=product)
     rating_value = 0.0

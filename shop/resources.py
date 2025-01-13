@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class RatingResource(resources.ModelResource):
     # Define the field for ForeignKey to Product
-    print('entered Rating Resource')
+    #print('entered Rating Resource')
     product = fields.Field(
         column_name='isbn',  # CSV column name for the foreign key to Product
         attribute='product',  # Model attribute

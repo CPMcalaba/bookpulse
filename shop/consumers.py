@@ -3,6 +3,7 @@ from asgiref.sync import sync_to_async
 import json
 from .models import Product, Interaction, Rating
 from .recommendation import load_data, train_algorithm, get_top_n_recommendations
+from channels.exceptions import StopConsumer
 
 class InteractionConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -14,6 +15,7 @@ class InteractionConsumer(AsyncWebsocketConsumer):
     async def disconnect(self, close_code):
         # Leave room
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+        raise StopConsumer()
 
     async def receive(self, text_data):
             text_data_json = json.loads(text_data)

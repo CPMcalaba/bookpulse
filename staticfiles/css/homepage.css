@@ -1,11 +1,14 @@
 .hero-section{
     position: relative;
-    background: url('../images/hero-image.jpg') no-repeat center center;
+    background: url('https://res.cloudinary.com/ewise/image/upload/v1733179920/library_oqj2ck.jpg') no-repeat center center;
     background-size: cover;
-    padding: 100px 0;
-    height: 70vh;
+    height: 100vh;
     color: var(--main-text-color-white) !important;
 
+}
+
+.login-logo h1 picture img{
+    width: 50px !important;
 }
 
 .hero-section::before{
@@ -22,10 +25,10 @@
 .hero-container{
     position: relative;
     z-index:2;
-    margin-top: 50px;
 }
 
 .hero-container h2{
+    z-index: 1;
     font-weight: 700 !important;
 }
 
@@ -70,8 +73,6 @@
     position: absolute !important;
     top: 0;
     right: 0;
-    background-color: var(--main-btn-color-light);
-    color: var(--main-text-color-white);
     padding: 5px;
 }
 
@@ -88,4 +89,42 @@
 
 .fa-plus{
     font-size: small !important;
+}
+
+@media (max-width: 576px) { /* Targets extra-small screens and down */
+    .custom-dropdown-button {
+        font-size: 12px; /* Smaller font size */
+        padding: 0.2rem 0.5rem; /* Adjusts button padding */
+    }
+
+    .mobile-text {
+        font-size: 25px;
+        line-height: 1.5;
+    }
+
+    .mobile-lead{
+        font-size: 14px !important;
+    }
+
+    .mobile-btn{
+        font-size: 12px !important;
+        padding: .5rem !important;
+    }
+
+    .btn-main-container{
+        width: 60% !important;
+        margin: 20px auto !important;
+    }
+
+    .hero-container{
+        margin-top: 25%;
+    }
+
+    /*.new-release-row .col img{
+        width: 100% !important;
+    }
+
+    .card{
+        width: 20rem !important;
+    }*/
 }
